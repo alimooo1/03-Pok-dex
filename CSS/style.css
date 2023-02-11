@@ -1,0 +1,84 @@
+:root {
+    --grass : rgb(110, 228, 116);
+    --fire : rgb(255, 196, 183);
+    --water : rgb(179, 255, 246);
+    --bug : rgb(247, 177, 98);
+    --normal : rgb(241, 233, 160);
+    --electric : rgb(148, 140, 253);
+    --poison : rgb(255, 70, 70);
+    --fairy : rgb(255, 124, 235);
+    --ground : rgb(132, 75, 75);
+    --fighting : rgb(171, 154, 0);
+    --psychic : rgb(76, 77, 111);
+    --rock : rgb(75, 139, 106);
+    --ghost : rgb(206, 205, 196);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    padding: 100px 180px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    /* background-color: aqua; */
+}
+
+h4 {
+    /* background-color: blue; */
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    font-size: 2em;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card {
+    padding: 30px 58px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card img {
+    background-color: white;
+    width: 55px;
+    border-radius: 100px;
+    padding: 25px;
+    margin-bottom: 40px;   
+}
+
+.pokemon-name {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.pokemon-type {
+    background-color: white;
+    width: 50px;
+    height: 25px;
+    box-sizing: border-box;
+    line-height: 25px;
+}
