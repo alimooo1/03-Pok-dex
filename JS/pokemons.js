@@ -1,3 +1,5 @@
+var fs = require("fs")
+
 const POKEMONS = [
   {
     name: "Bulbasaur",
@@ -601,4 +603,11 @@ const POKEMONS = [
   },
 ];
 
-export const myJson = JSON.stringify(POKEMONS)
+const myJson = JSON.stringify(POKEMONS)
+fs.writeFileSync('pokemons.json', myJson, (err) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  console.log('pokemon.json has been created successfully');
+});

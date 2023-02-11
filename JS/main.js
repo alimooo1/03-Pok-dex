@@ -1,6 +1,13 @@
-import {myJson} from './pokemons.js'
+function getPokemons(){
+    var xhReq = new XMLHttpRequest();
+    xhReq.open("GET", "../pokemons.json", false);
+    xhReq.send(null)
+    return JSON.parse(xhReq.responseText);
+}
 
-const myPokemons = JSON.parse(myJson)
+const myPokemons = getPokemons()
+
+console.log(myPokemons);
 const cards = document.querySelector(".cards")
 
 myPokemons.forEach((pokemon) => {
