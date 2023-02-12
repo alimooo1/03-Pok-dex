@@ -27,17 +27,46 @@ function getPokemons(){
 
 function searchHandler() {
     cards.innerHTML = ""
+    pages.innerHTML = ""
     const searchedArray = myPokemons.filter((checkedItem)=>{
         return (checkedItem.name.toLowerCase()).startsWith(search.value)
     })
-    showItems(searchedArray)
+    if(searchedArray.length === myPokemons.length){
+        pagesNumberHandler(searchedArray)
+        showItems(myPokemons.slice(0 ,itemNumbers ))
+    }else {
+        showItems(searchedArray)
+    }
 }
+
+function pagesNumberHandler (items) {
+    for (let i = 0; i < Math.ceil(items.length / itemNumbers);i++) {
+        const page = document.createElement("div")
+        page.innerHTML = i+1
+        page.classList.add("page")
+        pages.appendChild(page)
+        page.addEventListener("click", pageHandler)
+    }
+}
+
+function pageHandler(event) {
+    cards.innerHTML = ""
+    const showedArray = myPokemons.slice((event.srcElement.innerHTML - 1)*itemNumbers ,(event.srcElement.innerHTML)*itemNumbers )
+    showItems(showedArray)
+}
+
 
 const myPokemons = getPokemons()
 const cards = document.querySelector(".cards")
 const search = document.querySelector("input")
-showItems(myPokemons)
+const pages = document.querySelector(".pages")
+let itemNumbers = 20
+// showItems(myPokemons)
+pagesNumberHandler(myPokemons)
+showItems(myPokemons.slice(0 ,itemNumbers ))
 
 search.addEventListener("keyup",searchHandler)
+
+
 
 
