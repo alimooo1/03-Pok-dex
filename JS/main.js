@@ -8,7 +8,7 @@ const showItems = (items) => {
         name.classList.add("pokemon-name")
         name.innerText= pokemon.name
         const type = document.createElement("div")
-        type.classList.add("div")
+        type.classList.add("pokemon-type")
         type.innerText = pokemon.type
         newPokemon.style.backgroundColor = "var(--"+pokemon.type+")"
         newPokemon.appendChild(image)

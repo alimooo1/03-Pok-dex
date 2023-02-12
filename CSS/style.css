@@ -24,6 +24,7 @@ body{
     height: 100vh;
     padding: 100px 180px;
     box-sizing: border-box;
+    background-color: rgb(255, 228, 226);
 }
 
 .container {
@@ -38,9 +39,9 @@ h4 {
     height: 120px;
     line-height: 120px;
     text-align: center;
-    font-size: 2em;
-    font-family: Arial;
-    font-weight: bold;
+    font-size: 3em;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 500;
 }
 
 .cards {
@@ -61,28 +62,39 @@ h4 {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.107);
+    border-radius: 15px;
+    transition: 0.5s all;
+}
+
+.card:hover {
+    cursor: pointer;
 }
 
 .card img {
     background-color: white;
     width: 55px;
+    height: 55px;
     border-radius: 100px;
     padding: 25px;
     margin-bottom: 40px;   
 }
 
 .pokemon-name {
-    font-size: 1.25em;
-    font-weight: bold;
+    font-size: 1.3em;
+    font-weight: 300;
     margin-bottom: 8px;
+    font-family: 'Roboto Slab', serif;
 }
 
 .pokemon-type {
     background-color: white;
-    width: 50px;
+    width: 60px;
     height: 25px;
     box-sizing: border-box;
     line-height: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.107);
 }
 
 input {
@@ -92,4 +104,5 @@ input {
     margin-bottom: 30px;
     box-sizing: border-box;
     padding: 10px;
+    font-family: 'Roboto Slab', serif;
 }
