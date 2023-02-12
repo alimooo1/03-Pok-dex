@@ -61,10 +61,9 @@ const cards = document.querySelector(".cards")
 const search = document.querySelector("input")
 const pages = document.querySelector(".pages")
 let itemNumbers = 20
-// showItems(myPokemons)
+
 pagesNumberHandler(myPokemons)
 showItems(myPokemons.slice(0 ,itemNumbers ))
-
 search.addEventListener("keyup",searchHandler)
 
 
