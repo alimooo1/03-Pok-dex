@@ -20,11 +20,10 @@ const showItems = (items) => {
     cards.appendChild(MyFragment)
 }
 
-function getPokemons(){
-    var xhReq = new XMLHttpRequest();
-    xhReq.open("GET", "../pokemons.json", false);
-    xhReq.send(null)
-    return JSON.parse(xhReq.responseText);
+async function getPokemons(){
+    const data = await fetch("JS/pokemons.json")
+    const result =  await data.json()
+    return result
 }
 
 function searchHandler() {
@@ -58,7 +57,7 @@ function pageHandler(event) {
 }
 
 
-const myPokemons = getPokemons()
+const myPokemons = await getPokemons()
 const cards = document.querySelector(".cards")
 const search = document.querySelector("input")
 const pages = document.querySelector(".pages")
