@@ -1,4 +1,5 @@
 const showItems = (items) => {
+    const MyFragment = document.createDocumentFragment()
     items.forEach((pokemon) => {
         const newPokemon = document.createElement("div")
         newPokemon.classList.add("card")
@@ -14,8 +15,9 @@ const showItems = (items) => {
         newPokemon.appendChild(image)
         newPokemon.appendChild(name)
         newPokemon.appendChild(type) 
-        cards.appendChild(newPokemon)
+        MyFragment.appendChild(newPokemon)
     })
+    cards.appendChild(MyFragment)
 }
 
 function getPokemons(){
@@ -29,7 +31,7 @@ function searchHandler() {
     cards.innerHTML = ""
     pages.innerHTML = ""
     const searchedArray = myPokemons.filter((checkedItem)=>{
-        return (checkedItem.name.toLowerCase()).startsWith(search.value)
+        return (checkedItem.name.toLowerCase()).includes(search.value)
     })
     if(searchedArray.length === myPokemons.length){
         pagesNumberHandler(searchedArray)
@@ -60,6 +62,8 @@ const myPokemons = getPokemons()
 const cards = document.querySelector(".cards")
 const search = document.querySelector("input")
 const pages = document.querySelector(".pages")
+
+//Number of Items in each Page is flexible. Change below number and test it.
 let itemNumbers = 20
 
 pagesNumberHandler(myPokemons)

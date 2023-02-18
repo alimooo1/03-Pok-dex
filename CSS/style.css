@@ -31,11 +31,9 @@ body{
     width: 100%;
     height: 100%;
     text-align: center;
-    /* background-color: aqua; */
 }
 
 h4 {
-    /* background-color: blue; */
     height: 120px;
     line-height: 120px;
     text-align: center;
@@ -106,12 +104,16 @@ input {
     box-sizing: border-box;
     padding: 10px;
     font-family: 'Roboto Slab', serif;
+    border: none;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.107);
+}
+
+input:focus {
+    outline: none;
 }
 
 .pages {
-     /* width: 60%; */
      height: 50px;
-     /* background-color: brown; */
      margin: 0 auto;
      margin-top: 50px;
      display: flex;
@@ -127,7 +129,7 @@ input {
     line-height: 50px;
     font-size: 1.5em;
     font-weight: bold;
-    color: rgb(247, 187, 187);
+    color: rgb(255, 235, 235);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.107);
 }
 
